@@ -15,7 +15,7 @@ target_username = 'gordogg24p'
 base_date = datetime.datetime(2019, 11, 17)
 
 # Set the message that the bot will respond with
-response_message = 'Hey, {0}! It has been {1} Brus since {2} when you had me unceremoniously murdered for the crime of simply existing.'
+response_message = 'Hey, {0}! It has been {1} Brus since {2} when you had me unceremoniously murdered for the crime of existing.'
 
 # Set the maximum number of responses allowed per day
 max_responses_per_day = 10
@@ -38,7 +38,7 @@ for comment in subreddit.stream.comments(skip_existing=True):
         
         # Check if the response limit has been reached
         if response_count < max_responses_per_day:
-            days_since_base = (datetime.datetime.now() - base_date).days / 126
+            days_since_base = round((datetime.datetime.now() - base_date).days / 126, 2)
             comment.reply(response_message.format(target_username, days_since_base, base_date.strftime('%B %d, %Y')))
             response_count += 1
             last_response_timestamp = datetime.datetime.now()
