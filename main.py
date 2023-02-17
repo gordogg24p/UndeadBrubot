@@ -9,16 +9,16 @@ reddit = praw.Reddit(client_id='RAXRp8NFvIGvADfvIkFmIQ',
                      user_agent='brubot by /u/undeadbrubot')
 
 # Set the target username for the bot to respond to
-target_username = 'gordogg24p'
+target_username = 'RLLRRR'
 
 # Set the base date to calculate the number of days from
 base_date = datetime.datetime(2019, 11, 17)
 
 # Set the message that the bot will respond with
-response_message = 'Hey, {0}! It has been {1} Brus since {2} when you had me unceremoniously murdered for the crime of existing.'
+response_message = 'Hey, {0}! It has been {1} Brus since {2}, when you had me unceremoniously murdered for the crime of existing.'
 
 # Set the maximum number of responses allowed per day
-max_responses_per_day = 10
+max_responses_per_day = 1
 
 # Set the time window for counting the number of responses (in hours)
 response_time_window = 24
@@ -28,7 +28,7 @@ response_count = 0
 last_response_timestamp = datetime.datetime.now()
 
 # Monitor the comments on a specific subreddit
-subreddit = reddit.subreddit('ActualLonghornNation')
+subreddit = reddit.subreddit('LonghornNation')
 for comment in subreddit.stream.comments(skip_existing=True):
     if comment.author.name == target_username:
         # Check if enough time has passed since the last response
